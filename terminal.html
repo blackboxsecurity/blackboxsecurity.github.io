@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<head>
+    <meta charset="utf-8" />
+    <script src="cdn-cgi/apps/head/st6l0glDx1SuqHGnpjshJffuUD8.js"></script><script src='termjs/jquery-3.1.1.min.js' type="37046e4be3fd5fb12eed2de5-text/javascript"></script>
+    <script src='termjs/jcubic/jquery.terminal/master/js/jquery.terminal.js' type="37046e4be3fd5fb12eed2de5-text/javascript"></script>
+      <link rel='stylesheet prefetch' href='termjs/jcubic/jquery.terminal/master/css/jquery.terminal.css'>
+    <script src='termjs/jcubic/jquery.terminal/master/js/jquery.mousewheel-min.js' type="37046e4be3fd5fb12eed2de5-text/javascript"></script>
+
+
+    <script src="termjs/cvan/keyboardevent-key-polyfill/master/index.js" type="37046e4be3fd5fb12eed2de5-text/javascript"></script>
+    <style></style>
+  </head>
+<body>
+
+<script type="37046e4be3fd5fb12eed2de5-text/javascript">
+jQuery(document).ready(function($) {
+     keyboardeventKeyPolyfill.polyfill();
+    var id = 1;
+    $('body').terminal(function(command, term) {
+        if (command == 'help') {
+            term.echo("------------------------------")
+            term.echo("BlackB0x helper")
+            term.echo("-------------------------------")
+            term.echo("")
+           
+
+            term.echo("Regarding Team:")
+            term.echo("   about          About the projects")
+            term.echo("   team           About the team")
+
+
+            term.echo("Misc:")
+            term.echo("   clear          Clear the screen");
+            term.echo("   ctf            Details of our ctf challenge");
+            term.echo("   Projects       Projects");
+            term.echo("   ls             List all commands");
+            term.echo("   Contact        Contact ");
+
+
+        } 
+
+        else if (command == 'test'){
+            term.push(function(command, term) {
+                if (command == 'help') {
+                    term.echo('if you type ping it will display pong');
+                } else if (command == 'ping') {
+                    term.echo('pong');
+                } else {
+                    term.echo('unknown command ' + command);
+                }
+            }, {
+                prompt: 'test> ',
+                name: 'test'});
+        }
+
+        else if(command == "about"){
+          term.echo("About Blackbox here.")
+
+        }
+
+        else if(command == "team"){
+
+          term.echo("Blackbox crew:")
+          term.echo("   AkkuS         :  Researcher")
+          term.echo("   KOA           :  Team Lead ")
+          term.echo("   User3         :  Test2")
+          term.echo("   User4         :  Test3")
+
+        }
+        else if (command == 'pwd'){
+          term.echo('/root/Turkey/s/best/and/most/experienced/team/with/you');
+        }
+        else if (command == 'ls'){
+          term.echo('help');
+          term.echo('pwd');
+          term.echo('getflag');
+          term.echo('ctf_rewards');
+        }
+
+        else if(command == "ctf_rewards"){
+          term.echo('Not clear')
+          term.echo('Not clear')
+          term.echo('Follow us on twitter @blackboxsectr')
+        }
+
+        else if (command == 'ctf_hint'){
+          term.echo("empty :)")
+          term.echo("...")
+          term.echo("Dont forget to check again !")
+        }
+
+        else if (command == 'getflag') {
+          term.echo('Not yet :) there is not any flag. But write something');
+          term.push(function(command, term) {
+            term.echo("We are not sure you entered the correct data -> "+command)
+            term.echo("Ask AkkuS maybe he knows")
+            term.echo("Please enter `exit` to exit")
+
+
+          },{
+              prompt: 'ctf_dir> ',
+              name: 'getflag'});
+
+        }
+         else {
+            term.echo("unknow command " + command);
+        }
+    }, {
+        greetings: "Here's some information about the Blackbox. Let's try something!",
+        onBlur: function() {
+            // prevent loosing focus
+            return false;
+        }
+    });
+});
+
+</script>
+<script src="termjs/rocket-loader.min.js" data-cf-settings="37046e4be3fd5fb12eed2de5-|49" defer=""></script></body>
+
+</html>
